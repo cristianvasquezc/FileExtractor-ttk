@@ -1,0 +1,70 @@
+import tkinter as tk
+from tkinter import ttk
+import webbrowser
+
+class AboutWindow(tk.Toplevel):
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.title("Acerca de File Extractor")
+        self.resizable(False, False)
+        self.center_window(300, 330)        
+        self.set_app_icon()
+        
+        main_frame = ttk.Frame(self, padding="10")
+        main_frame.pack(expand=True, fill="both")
+        
+        # Título
+        title_label = ttk.Label(
+            main_frame, 
+            text="File Extractor", 
+            font=("Segoe UI", 16, "bold")
+        )
+        title_label.pack(pady=(0, 5))
+        
+        # Descripción refinada
+        description = (
+            "FileExtractor es una potente herramienta de escritorio diseñada para "
+            "automatizar la organización de archivos mediante la copia o el traslado "
+            "basado en extensiones específicas.\n\n"
+            "Con una interfaz intuitiva, permite gestionar directorios de manera "
+            "recursiva, explorando automáticamente todas las subcarpetas para "
+            "garantizar que ningún archivo sea omitido. Es la solución ideal para "
+            "ahorrar tiempo en tareas repetitivas y gestionar grandes volúmenes "
+            "de información con total seguridad y confianza."
+        )
+        
+        desc_label = ttk.Label(
+            main_frame, 
+            text=description,
+            wraplength=280,
+            font=("Segoe UI", 10)
+        )
+        desc_label.pack(pady=(0, 10))
+        
+        # Versión e Info
+        info_frame = ttk.Frame(main_frame)
+        info_frame.pack(fill="x")
+        
+        ttk.Label(info_frame, text="Versión:", font=("Segoe UI", 9, "bold")).pack(side="left")
+        ttk.Label(info_frame, text=" 1.0.0").pack(side="left")
+        
+        # Link Developer
+        dev_frame = ttk.Frame(main_frame)
+        dev_frame.pack(fill="x", pady=(5, 0))
+        
+        ttk.Label(dev_frame, text="Desarrollado por:", font=("Segoe UI", 9, "bold")).pack(side="left")
+        
+        link_label = tk.Label(
+            dev_frame, 
+            text=" Cristian Vásquez", 
+            fg="#de1a86", 
+            cursor="hand2",
+            font=("Segoe UI", 8)
+        )
+        link_label.pack(side="left")
+        link_label.bind("<Button-1>", lambda e: webbrowser.open("https://mislinks.netlify.app/"))
+
+        self.focus_set()
+        self.grab_set()
+        self.bind("<Escape>", lambda e: self.destroy())
+
