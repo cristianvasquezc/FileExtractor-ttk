@@ -32,6 +32,6 @@ Para generar un ejecutable (.exe) de un solo archivo y con el icono aplicado, us
 
 ### Crear sin recursos externos (Recomendado)
 ```bash
-pyinstaller --onefile --windowed --icon=icon.ico --add-data "icon.ico;." main.py
+pyinstaller --onefile --windowed --icon=icon.ico --name=FileExtractor --add-data "icon.ico;." main.py
 ```
 *Desarrollado para la extracción rápida de archivos en entornos de edición y organización de media.*
