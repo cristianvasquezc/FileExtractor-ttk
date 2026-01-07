@@ -1,6 +1,8 @@
 Unicode true
 !define PRODUCT_NAME "FileExtractor"
-!define PRODUCT_VERSION "1.0.0"
+!ifndef PRODUCT_VERSION
+  !define PRODUCT_VERSION "1.0.0"
+!endif
 !define PRODUCT_PUBLISHER "Cristian Vásquez"
 !define PRODUCT_WEB_SITE "https://mislinks.netlify.app/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\FileExtractor.exe"
