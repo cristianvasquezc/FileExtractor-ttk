@@ -7,7 +7,7 @@ class AboutWindow(tk.Toplevel):
         super().__init__(parent)
         self.title("Acerca de File Extractor")
         self.resizable(False, False)
-        self.center_window(300, 330)        
+        self.center_window(250, 330)        
         self.set_app_icon()
         
         main_frame = ttk.Frame(self, padding="10")
@@ -17,7 +17,7 @@ class AboutWindow(tk.Toplevel):
         title_label = ttk.Label(
             main_frame, 
             text="File Extractor", 
-            font=("Segoe UI", 16, "bold")
+            font=("Segoe UI", 12, "bold")
         )
         title_label.pack(pady=(0, 5))
         
@@ -36,10 +36,10 @@ class AboutWindow(tk.Toplevel):
         desc_label = ttk.Label(
             main_frame, 
             text=description,
-            wraplength=280,
-            font=("Segoe UI", 10)
+            wraplength=230,
+            font=("Segoe UI", 9)
         )
-        desc_label.pack(pady=(0, 10))
+        desc_label.pack(pady=(0, 5))
         
         # Versión e Info
         info_frame = ttk.Frame(main_frame)
